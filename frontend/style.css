@@ -18,7 +18,7 @@
     align-items: center;
     width: 100%;
     height: 48px;
-    background-color: rgb(19, 19, 19);
+    background: linear-gradient(#1a1a1a, #141414);
     color: #C9C9CB;
     font-size: 13px;
     padding: 0px 52px;
@@ -654,6 +654,10 @@
 
 /* 6 секция (расположение)*/
 
+.location--title.for-mobile {
+    display: none;
+}
+
 .location {
     display: flex;
     justify-content: space-between;
@@ -765,7 +769,7 @@
 /* подвал сайта */
 
 .footer {
-    background-color: #000;
+    background: linear-gradient(#000, #1f1f1f);
     font-weight: 300;
 }
 
@@ -1038,7 +1042,6 @@
     position: absolute;
     content: "";
     display: flex;
-    align-items: top;
     justify-content: center;
     width: 172px;
     height: 54px;
@@ -1052,4 +1055,365 @@
     left: -40px;
     top: -5px;
     transform: rotate(-20deg);
+}
+
+@media (max-width: 1440px) {
+    .wrapper--advantages, .main--container--wrapper, .nav--list {
+        display: none;
+    }
+
+    .main--header {
+        padding: 0 20px;
+        padding-top: 30px;
+    }
+
+    .main--container--button {
+        margin-left: 0;
+    }
+
+    .empty-for-image {
+        margin-right: 0;
+    }
+
+    .header--nav {
+        justify-content: space-between;
+    }
+
+    .about {
+        padding: 0 36px;
+        padding-bottom: 67px;
+    }
+
+    .about--advantages {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .about--advantages--element {
+        width: 100%;
+    }
+
+    .about--advantages--description {
+        margin-bottom: 33px;
+    }
+
+    .about--title {
+        line-height: 90px;
+        margin-bottom: 50px;
+    }
+
+    .advantages {
+        padding: 64px 36px;
+    }
+
+    .advantages-container {
+        flex-direction: column;
+        align-items: start;
+        gap: 30px;
+    }
+
+    .advantages--img {
+        width: 100%;
+        height: auto;
+    }
+
+    .advantages--title {
+        width: auto;
+    }
+
+    .advantages--list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .gallery {
+        padding: 50px 0;
+    }
+
+    .gallery--container {
+        padding: 0 36px;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .gallery--title {
+        margin: 0;
+        margin-left: auto;
+        text-align: right;
+    }
+
+    .gallery--img {
+        width: 100%;
+        height: auto;
+    }
+
+    .prices {
+        padding: 50px 36px;
+    }
+
+    .card--about {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .prices--card:nth-child(odd) .card--about {
+        flex-direction: column-reverse;
+    }
+
+    .card--about img {
+        width: 100%;
+        height: auto;
+    }
+
+    .payment {
+        width: 100%;
+        padding: 50px 36px;
+        padding-top: 260px;
+    }
+
+    .payment::before {
+        left: 30px;
+        top: 30px;
+    }
+
+    .payment--wrapper {
+        margin: 0;
+    }
+
+    .payment--description {
+        max-width: none;
+    }
+
+    .payment--wrapper {
+        width: auto;
+    }
+
+    .location--title {
+        display: none;
+    }
+
+    .location--title.for-mobile {
+        display: block;
+    }
+
+    .location {
+        width: 100%;
+        flex-direction: column;
+        padding: 50px 36px;
+        margin-bottom: 0;
+    }
+
+    .location--map {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .footer--wrapper {
+        position: relative;
+        flex-direction: column;
+        gap: 30px;
+        align-items: start;
+        padding: 30px 36px;
+    }
+
+    .developed--by {
+        position: absolute;
+        right: 36px;
+        bottom: 30px;
+    }
+
+    .advantages--wrapper, .gallery-wrapper, .prices {
+        max-width: none;
+    }
+
+    .images--container {
+        width: 100%;
+    }
+
+    .info-text {
+        max-width: none;
+    }
+
+    .cafe-about--wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .cafe-about--image {
+        width: 100%;
+        height: auto;
+        max-height: 700px;
+    }
+
+    .cafe-about {
+        padding-left: 36px;
+        padding-right: 36px;
+        padding-bottom: 60px;
+    }
+
+    .cafe-about--title {
+        width: auto;
+    }
+
+    .cafe-about--advantages {
+        flex-direction: column;
+        gap: 30px;
+        max-width: none;
+    }
+
+    .about--advantages__title, .about--advantages__description {
+        max-width: none;
+    }
+
+    .story {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 40px;
+        padding-left: 36px;
+        padding-right: 36px;
+        padding-bottom: 50px;
+    }
+
+    .story-image {
+        width: 100%;
+        height: auto;
+        max-height: 700px;
+    }
+
+    .cafe-gallery--wrapper {
+        max-width: none;
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+
+    .cafe-gallery--container {
+        flex-direction: column-reverse;
+        align-items: start;
+        gap: 40px;
+    }
+
+    .cafe-gallery--title {
+        width: auto;
+    }
+
+    .cafe-gallery--container.second {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cafe-images--wrapper {
+        display: flex;
+        width: 100%;
+        gap: 38px;
+    }
+
+    .menu--wrapper {
+        max-width: none;
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+
+    .menu-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .menu--images--wrapper {
+        gap: 20px;
+    }
+
+    .menu--decor {
+        top: -20px;
+    }
+
+    .card--info {
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .main--container--info {
+        display: none;
+    }
+
+    .main--header {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        height: 113px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main--wrapper--image {
+        top: 210px;
+    }
+
+    .main--container {
+        padding-bottom: 100px;
+    }
+
+    .header--nav {
+        padding: 0 25px;
+    }
+
+    .main-wrapper-title {
+        text-align: center;
+        line-height: 60px;
+        margin-top: 270px;
+    }
+
+    .main--container {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .about--title, .advantages--title, .gallery--title, .prices--title, .payment--title, .payment--title, .location--title {
+        font-size: 58px;
+        line-height: 60px;
+    }
+
+    .payment {
+        padding-top: 280px;
+    }
+
+    .payment--title {
+        margin-bottom: 30px;
+    }
+
+    .about, .advantages, .gallery--container, .prices, .payment, .location, .footer--wrapper {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .gallery--title {
+        width: auto;
+    }
+
+    .card--info {
+        width: auto;
+    }
+
+    .card--info div {
+        display: grid;
+        grid-template-columns: 150px auto;
+    }
+
+    .info-text {
+        max-width: none;
+    }
+
+    .social--number {
+        font-size: 14px;
+    }
+
+    .cafe-about--image, .story-image {
+        max-height: 450px;
+    }
+
+    .menu--decor {
+        display: none;
+    }
 }
