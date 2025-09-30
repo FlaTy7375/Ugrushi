@@ -93,8 +93,17 @@
     color: white;
     padding-bottom: 185px;
     background-image: linear-gradient(black, transparent), url("images/bg-ugrushi.jpg");
+    background-size: cover;
     background-position: 50%;
     background-repeat: no-repeat;
+}
+
+.main--container.cafe {
+    background-image: linear-gradient(black, transparent), url("images/bg-cafe.jpeg");
+    background-size: cover;
+    background-position: 50% 75%;
+    background-repeat: no-repeat;
+    padding-bottom: 135px;
 }
 
 .main--header {
@@ -137,6 +146,11 @@
     color: #D6B782;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.main--container--button.cafe, .empty-for-image.cafe {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .main--container--button:hover {
@@ -209,6 +223,10 @@
     font-family: "Art Nouveau 1900";
     font-size: 50px;
     letter-spacing: 5px;
+}
+
+.main-wrapper-title.cafe {
+    margin-top: 260px;
 }
 
 .wrapper--advantages {
@@ -576,7 +594,6 @@
     padding: 62px 52px;
     padding-top: 0;
     color: #fff;
-    margin-bottom: 82px;
 }
 
 .payment::before {
@@ -643,6 +660,7 @@
     width: 1280px;
     margin: 0 auto;
     margin-bottom: 60px;
+    padding-top: 70px;
 }
 
 .location--map {
@@ -822,4 +840,216 @@
     font-weight: 300;
     font-size: 15px;
     margin-top: 8px;
+}
+
+.cafe-about {
+    background-color: #000;
+    padding-bottom: 100px;
+}
+
+.cafe-about--wrapper {
+    display: grid;
+    grid-template-columns: 612px auto;
+    gap: 72px;
+    max-width: 1296px;
+    margin: 0 auto;
+    color: #fff;
+    padding-top: 74px;
+}
+
+.cafe-about--image {
+    object-fit: cover;
+    object-position: 0 95%;
+    width: 612px;
+    height: 408px;
+}
+
+.cafe-about--title {
+    width: 426px;
+    font-size: 80px;
+    line-height: 90px;
+    color: #fff;
+    font-family: "Art Nouveau 1900";
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+.cafe-about--text {
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: #c9c9c9;
+}
+
+.cafe-about--advantages {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1296px;
+    margin: 0 auto;
+    margin-top: 73px;
+}
+
+.about--advantages__title {
+    font-family: Helvetica, sans-serif;
+    font-size: 23px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    color: #D6B782;
+    font-weight: 400;
+    max-width: 326px;
+}
+
+.about--advantages__description {
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: #c9c9c9;
+    max-width: 380px;
+}
+
+.story {
+    display: grid;
+    grid-template-columns: auto 565px;
+    max-width: 1296px;
+    margin: 0 auto;
+    gap: 74px;
+    padding-top: 74px;
+    padding-bottom: 102px;
+}
+
+.story-title {
+    font-size: 80px;
+    line-height: 90px;
+    color: #000;
+    font-family: "Art Nouveau 1900";
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.story-description {
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: #282828;
+    margin-bottom: 25px;
+}
+
+.story-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 127px;
+    height: 48px;
+    background-color: transparent;
+    border: 1px solid #D6B782;
+    color: #D6B782;
+    font-size: 14px;
+}
+
+.story-button:hover {
+    background-color: #D6B782;
+    color: #fff;
+}
+
+.story-image {
+    object-fit: cover;
+    object-position: 0 60%;
+}
+
+.cafe-gallery {
+    background-color: #F4F4F4;
+    padding-top: 66px;
+    padding-bottom: 70px;
+}
+
+.cafe-gallery--wrapper {
+    max-width: 1296px;
+    margin: 0 auto;
+}
+
+.cafe-gallery--container {
+    display: flex;
+    gap: 75px;
+    align-items: center;
+    margin-bottom: 54px;
+}
+
+.cafe-gallery--title {
+    width: 360px;
+    font-size: 80px;
+    line-height: 90px;
+    color: #000;
+    font-family: "Art Nouveau 1900";
+    letter-spacing: 2px;
+}
+
+.cafe-gallery--container.second {
+    display: grid;
+    grid-template-columns: 851px 406px;
+    gap: 38px;
+    margin-bottom: 0;
+}
+
+.cafe-images--wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 406px;
+}
+
+.menu {
+    padding-top: 30px;
+    padding-bottom: 76px;
+    background-color: #E5E5E5;
+}
+
+.menu--wrapper {
+    max-width: 1227px;
+    margin: 0 auto;
+}
+
+.menu--title {
+    text-align: center;
+    font-size: 80px;
+    line-height: 90px;
+    color: #000;
+    font-family: "Art Nouveau 1900";
+    letter-spacing: 2px;
+    margin-bottom: 48px;
+}
+
+.menu--images--wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 75px;
+}
+
+.menu--container {
+    position: relative;
+}
+
+.menu-image {
+    object-fit: cover;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.menu--decor {
+    position: absolute;
+    content: "";
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    width: 172px;
+    height: 54px;
+    font-size: 42px;
+    line-height: 40px;
+    color: #000;
+    font-family: "Art Nouveau 1900";
+    background-color: #D6B782;
+    color: #000;
+    text-transform: uppercase;
+    left: -40px;
+    top: -5px;
+    transform: rotate(-20deg);
 }
