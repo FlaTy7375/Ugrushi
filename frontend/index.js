@@ -104,3 +104,59 @@ if (closeFireBtn) {
 if (modalBg) {
     modalBg.addEventListener("click", handleOutsideClick);
 }
+
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('more--info')) {
+        const button = e.target;
+        const card = button.closest('.prices--card');
+        
+        if (card) {
+            const priceHide = card.querySelector('.price-hide');
+            
+            if (priceHide) {
+                // Переключаем видимость контента
+                priceHide.classList.toggle('active');
+                
+                // Переключаем класс для стрелки
+                button.classList.toggle('active');
+                
+                // Меняем текст кнопки
+                button.textContent = priceHide.classList.contains('active') ? 'Скрыть' : 'Подробнее';
+            }
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.fire-container--btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+
+            button.classList.toggle('active');
+            content.classList.toggle('show');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const storyButton = document.querySelector('.story-button');
+    const storyHide = document.querySelector('.story-hide');
+    
+    storyButton.addEventListener('click', function() {
+        const isOpen = storyHide.classList.contains('show');
+        
+        if (isOpen) {
+            // Закрываем
+            storyHide.classList.remove('show');
+            storyButton.textContent = 'Подробнее';
+            storyButton.classList.remove('active');
+        } else {
+            // Открываем
+            storyHide.classList.add('show');
+            storyButton.textContent = 'Скрыть';
+            storyButton.classList.add('active');
+        }
+    });
+});

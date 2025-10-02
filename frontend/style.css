@@ -333,7 +333,7 @@ html {
 .about--advantages {
     display: flex;
     justify-content: space-between;
-    width: 1280px;
+    max-width: 1280px;
 }
 
 .about--advantages--element {
@@ -552,6 +552,7 @@ html {
 }
 
 .more--info {
+    text-align: left;
     background-color: transparent;
     color: #D6B782;
     font-size: 15px;
@@ -1222,31 +1223,33 @@ html {
     margin-bottom: 20px;
 }
 
-.fire-container--hide {
-    display: none;
-}
-
 .fire-container {
     cursor: pointer;
 }
 
-.fire-container--text {
+.fire-container--btn {
     position: relative;
     margin-top: 10px;
     margin-bottom: 20px;
     color: #D6B782;
+    background-color: transparent;
+    border: 0;
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
 }
 
-.fire-container--text::after {
+.fire-container--btn::after {
     position: absolute;
     content: "\2193";
     right: -30px;
     top: 0;
     width: 16px;
     height: 16px;
+}
+
+.fire-container--btn.active::after {
+    content: "\2191";
 }
 
 .fire-link {
@@ -1308,7 +1311,112 @@ html {
     transform: rotate(-45deg);
 }
 
-@media (max-width: 1440px) {
+.fire-container--content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.fire-container--content.show {
+    max-height: 1000px; /* Достаточно большое значение для контента */
+    transition: max-height 0.5s ease-in;
+}
+
+.fire-container--hide {
+    font-size: 18px;
+    line-height: 24px;
+    color: #d5d5d5;
+    font-weight: 300;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fire-container--content.show .fire-container--hide {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Задержка для каждого параграфа */
+.fire-container--content.show .fire-container--hide { transition-delay: 0.1s; }
+
+.price-hide {
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+.price-hide--text {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.price-hide {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
+}
+
+.price-hide.active {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.more--info {
+    min-width: 80px;
+    position: relative;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.more--info::after {
+    position: absolute;
+    content: "\2193";
+    right: -260px;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.more--info.active::after {
+    content: "\2191";
+    transform: translateY(-50%) rotate(0deg);
+}
+
+.info-block {
+    margin-bottom: 20px;
+}
+
+.story-hide {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.story-hide.show {
+    max-height: 1000px; /* Достаточно большое значение для плавности */
+    opacity: 1;
+}
+
+.story-description.hide {
+    margin: 0;
+    padding: 10px 0;
+    transition: all 0.5s ease;
+}
+
+.story-button {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1370px) {
+    .price-hide {
+        max-width: none;
+    }
+
     .wrapper--advantages, .main--container--wrapper, .nav--list {
         display: none;
     }
@@ -1764,8 +1872,19 @@ html {
         font-size: 14px;
     }
 
+    .fire-container--btn {
+        text-align: left;
+        max-width: 350px;
+    }
+
     .location--map {
         height: auto;
+    }
+}
+
+@media (max-width: 460px) {
+    .fire-container--btn {
+        max-width: 250px;
     }
 }
 
@@ -1777,5 +1896,9 @@ html {
 
     .modal-socials {
         width: 90%;
+    }
+
+    .fire-container--btn {
+        max-width: 200px;
     }
 }
