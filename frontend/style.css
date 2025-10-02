@@ -9,8 +9,8 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
-    box-sizing: border-box;
-    font-family: Helvetica, "Open Sans", sans-serif;
+    box-sizing: border-box; 
+    font-family: 'Mont-Regular', Helvetica, Arial, Lucida, sans-serif;
 }
 
 html {
@@ -53,10 +53,18 @@ html {
     gap: 28px;
 }
 
+
+.nav--link.btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .nav--link {
     color: #C9C9CB;
     text-decoration: none;
     transition: 0.3s;
+    font-size: 13px;
 }
 
 .nav--link:hover {
@@ -154,6 +162,7 @@ html {
     color: #D6B782;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 14px;
 }
 
 .main--container--button.cafe, .empty-for-image.cafe {
@@ -572,6 +581,7 @@ html {
 }
 
 .card--button.light {
+    font-size: 16px;
     border: 1px solid #D6B782;
     color: #D6B782;
     background-color: #fff;
@@ -859,6 +869,8 @@ html {
     font-weight: 300;
     font-size: 15px;
     margin-top: 8px;
+    color: #fff;
+    text-decoration: none;
 }
 
 .cafe-about {
@@ -963,6 +975,8 @@ html {
     border: 1px solid #D6B782;
     color: #D6B782;
     font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .story-button:hover {
@@ -1072,6 +1086,228 @@ html {
     transform: rotate(-20deg);
 }
 
+.modal-show {
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,.55);
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: -webkit-backdrop-filter 1s 1s,backdrop-filter 1s 1s;
+    backdrop-filter: saturate(180%) blur(5px);
+    -webkit-backdrop-filter: saturate(180%) blur(5px);
+    z-index: 10;
+}
+
+.modal-socials {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px 0;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: fixed;
+    width: 300px;
+    background-color: #1d1c1c;
+    z-index: 11;
+}
+
+.modal-socials--link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #ffffffd0;
+    text-decoration: none;
+    height: 60px;
+    font-size: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 125px;
+    background-position: 20%;
+}
+
+.modal-socials--link:hover {
+    color: #ffffff83;
+}
+
+.modal-socials--link.phone {
+    background-image: url("images/call-logo.png");
+}
+
+.modal-socials--link.viber {
+    background-image: url("images/viber-logo.png");
+}
+
+.modal-socials--link.tg {
+    background-image: url("images/tg-logo.png");
+}
+
+.modal-socials--link.wa {
+    background-image: url("images/wa-logo.png");
+}
+
+.modal-socials--close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #747373;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-socials--close:hover {
+    background-color: #555555;
+}
+
+.modal-socials--close::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 4px;
+    background-color: #000;
+    transform: rotate(45deg);
+}
+
+.modal-socials--close::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 4px;
+    background-color: #000;
+    transform: rotate(-45deg);
+}
+
+.modal-fire {
+    display: none;
+    position: fixed;
+    overflow: scroll;
+    padding: 80px 60px;
+    height: 80%;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 100px;
+    background-color: #181818;
+    z-index: 11;
+    color: #fff;
+}
+
+.fire-title {
+    font-size: 40px;
+    text-align: center;
+    color: #D6B782;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.fire-subtitle {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.fire-description {
+    font-size: 18px;
+    line-height: 24px;
+    color: #d5d5d5;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.fire-container--hide {
+    display: none;
+}
+
+.fire-container {
+    cursor: pointer;
+}
+
+.fire-container--text {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #D6B782;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.fire-container--text::after {
+    position: absolute;
+    content: "\2193";
+    right: -30px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.fire-link {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #d5d5d5;
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 70px;
+    background-image: url("images/call-logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.fire-link:not(:last-child) {
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+.fire-link--text.yellow {
+    color: #D6B782;
+}
+
+.fire-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #747373;
+    cursor: pointer;
+}
+
+.fire-button:hover {
+    background-color: #565656;
+}
+
+.fire-button::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 4px;
+    background-color: #000;
+    transform: rotate(45deg);
+}
+
+.fire-button::after {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 4px;
+    background-color: #000;
+    transform: rotate(-45deg);
+}
+
 @media (max-width: 1440px) {
     .wrapper--advantages, .main--container--wrapper, .nav--list {
         display: none;
@@ -1089,6 +1325,7 @@ html {
         background-position: 50%;
         background-color: transparent;
         border: none;
+        cursor: pointer;
     }
 
     .header--nav {
@@ -1105,18 +1342,20 @@ html {
         left: 0;
         width: 100%;
         z-index: 1;
+        background-color: #181818;
     }
 
     .nav--element {
         display: flex;
         align-items: center;
         height: 90px;
-        background-color: #000000ed;
+        background-color: #181818;
         cursor: pointer;
+        transition: 0.3s;
     }
 
     .nav--element:hover {
-        background-color: #ffffffe0;
+        background-color: #ffffff;
     }
 
     .nav--link {
@@ -1496,5 +1735,47 @@ html {
 
     .menu--decor {
         display: none;
+    }
+
+    .modal-fire {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 40px;
+    }
+
+    .fire-title {
+        margin-top: 10px;
+        font-size: 32px;
+    }
+
+    .fire-subtitle {
+        font-size: 18px;
+    }
+
+    .fire-container--text {
+        width: 90%;
+    }
+
+    .fire-container--text::after {
+        right: -30px;
+    }
+
+    .fire-link--text {
+        font-size: 14px;
+    }
+
+    .location--map {
+        height: auto;
+    }
+}
+
+@media (max-width: 330px) {
+    .modal-socials--link {
+        padding-left: 100px;
+        background-position: 10%;
+    }
+
+    .modal-socials {
+        width: 90%;
     }
 }
