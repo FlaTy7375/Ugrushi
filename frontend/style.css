@@ -1412,7 +1412,355 @@ html {
     transition: all 0.3s ease;
 }
 
+.gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+.gallery-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoomIn 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+    background: rgb(59, 59, 59);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3px;
+}
+
+.gallery-modal-close:hover {
+    color: #ccc;
+    background: rgb(49, 49, 49);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* Стили для изображений галереи */
+.gallery--img {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.gallery--img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cafe-gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+.cafe-gallery-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoomIn 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cafe-gallery-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cafe-gallery-modal-close:hover {
+    color: #ccc;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Стили для изображений кафе-галереи */
+.story-image {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.story-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+.room-gallery {
+    position: relative;
+    width: 750px;
+}
+
+.room-gallery-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.room-gallery-images {
+    position: relative;
+    width: 750px;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.room-main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.room-main-image.active {
+    opacity: 1;
+}
+
+.room-nav-btn {
+    position: absolute;
+    background: #515151;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.room-nav-btn.next {
+    right: 10px;
+}
+
+.room-nav-btn.prev {
+    left: 10px;
+}
+
+.room-nav-btn:hover {
+    background: #333333;
+}
+
+.room-nav-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.room-thumbnails {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.thumbnail.active {
+    opacity: 1;
+    border-color: #272727;
+}
+
+/* Модальное окно для полноэкранного просмотра */
+.room-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+.room-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoomIn 0.3s ease;
+    border-radius: 8px;
+}
+
+.room-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.room-modal-close:hover {
+    color: #ccc;
+}
+
+.room-modal-prev,
+.room-modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    user-select: none;
+    transition: background 0.3s ease;
+    z-index: 1001;
+}
+
+.room-modal-prev:hover,
+.room-modal-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.room-modal-prev {
+    left: 20px;
+}
+
+.room-modal-next {
+    right: 20px;
+}
+
+.room-modal-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
 @media (max-width: 1370px) {
+
+    .room-gallery, .room-gallery-images {
+        width: 100%;
+    }
+
+    .room-gallery-images {
+        height: 600px;
+    }
+
     .price-hide {
         max-width: none;
     }
@@ -1879,6 +2227,74 @@ html {
 
     .location--map {
         height: auto;
+    }
+
+    .gallery-modal-content {
+        max-width: 95%;
+        max-height: 70%;
+    }
+    
+    .gallery-modal-close {
+
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .room-gallery {
+        width: 100%;
+    }
+    
+    .room-gallery-images {
+        width: 100%;
+        height: 400px;
+    }
+
+    .room-main-image.active {
+        height: 100%;
+    }
+    
+    .room-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .thumbnail {
+        width: 60px;
+        height: 45px;
+    }
+    
+    .room-modal-content {
+        max-width: 95%;
+        max-height: 70%;
+    }
+    
+    .room-modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+    
+    .room-modal-prev,
+    .room-modal-next {
+        font-size: 24px;
+        padding: 12px;
+    }
+
+    .cafe-gallery-modal-content {
+        max-width: 95%;
+        max-height: 70%;
+    }
+    
+    .cafe-gallery-modal-close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
     }
 }
 

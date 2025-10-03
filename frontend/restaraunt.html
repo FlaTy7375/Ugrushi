@@ -165,12 +165,11 @@
 </div>
 <iframe id="booking-iframe" frameborder="0" scrolling="yes"
     src="https://pms.frontdesk24.ru/onlineWidget/full.html?token=21D2C8A4-500B-4540-A65E-077FBDB1864E&amp;source=ugrushi-hotel.by"
-    allowfullscreen="" allow="autoplay" style="height: 1750px; width: 100%; display: none;">
+    allowfullscreen="" allow="autoplay" style="height: 1150px; width: 100%; display: none;">
 </iframe>
 <script type="text/javascript">
     // Надежная функция для скрытия прелоадера
     function showBookingWidget() {
-        console.log('Функция showBookingWidget вызвана');
         var loader = document.getElementById('booking-loader');
         var iframe = document.getElementById('booking-iframe');
 
@@ -330,81 +329,101 @@
                 </div>
             </div>
         </section>
+        <!-- Модальное окно -->
+            <div id="gallery-modal" class="gallery-modal">
+            <span class="gallery-modal-close">&times;</span>
+            <img class="gallery-modal-content" id="modal-image">
+            </div>
         <section class="prices" id="prices">
             <h1 class="prices--title">Апартаменты и цены</h1>
             <ul class="prices--list">
                 <li class="prices--card">
-                    <div class="card--about">
-                        <div class="prices--wrapper">
-                            <div class="price--container">
-                                <p class="decor--price">230 byn</p>
-                                <span class="decor--price--text">сутки</span>
-                                <ul class="price--about">
-                                    <li class="price--element">
-                                        <p class="price--text">~ $ / € по курсу НБРБ</p>
-                                        <p class="price--text">* стоимость указана за 2 человек</p>
-                                        <p class="price--text yellow">** стоимость дополнительного места 40 бел.руб.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card--about--container">
-                                <h2 class="card--title">Апартаменты Студио №1</h2>
-                                <div class="card--info">
-                                    <div>
-                                        <p class="info--description">К-во комнат</p><span class="info-text">2</span>
-                                    </div>
-                                    <div>
-                                        <p class="info--description">Общая площадь</p><span class="info-text">40
-                                            м²</span>
-                                    </div>
-                                    <div>
-                                        <p class="info--description">Спальные места</p><span class="info-text">5</span>
-                                    </div>
-                                    <div>
-                                        <p class="info--description">В ванной</p><span class="info-text">Душевая кабина,
-                                            Фен, Полотенца</span>
-                                    </div>
-                                    <div>
-                                        <p class="info--description">На кухне</p><span class="info-text">Холодильник,
-                                            СВЧ-печь, Посуда</span>
-                                    </div>
-                                    <div>
-                                        <p class="info--description">Окна выходят</p><span class="info-text">На улицу /
-                                            двор</span>
-                                    </div>
-                                    <div>
-                                        <p class="info--description">Условия</p><span class="info-text">Возможно
-                                            проживание с питомцами(доп. плата)</span>
-                                    </div>
-                                    <div>
-                                        <p class="info--description">Этаж</p><span class="info-text">2</span>
-                                    </div>
-                                </div>
-                                <button class="more--info">Подробнее</button>
-                                <div class="price-hide">
-                                    <p class="price-hide--text">Апартаменты-студио с отдельным входом с улицы. В зоне
-                                        спальни наших гостей ждет одна большая двуспальная кровать (или две односпальные
-                                        кровати), качественное белое постельное белье. Санузел оснащен душевой кабиной с
-                                        диспенсерами для шампуня и геля для душа, дозатором с мылом для рук,
-                                        полотенцами, феном, тапочками. В зоне гостиной расположен раскладной диван (в
-                                        разложенном виде 140*190см). В апартаментах имеется мини-кухня с необходимым
-                                        набором посуды и приборов. Нашим гостям бесплатно предоставляется
-                                        чай,кофе,бутилированная вода. В апартаментах бесплатный интернет. При
-                                        необходимости, гостям бесплатно предоставляются утюг и гладильная доска.</p>
-                                </div>
-                                <div class="card--buttons">
-                                    <button class="card--button light">Позвонить</button>
-                                    <a class="card--button dark" href="mailto:ugrushi-hotel.gmail.com">Написать на
-                                        email</a>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="images/price-img1.jpg" alt="Изображение Апартаментов" width="750" height="500">
+                <div class="card--about">
+                <div class="prices--wrapper">
+                <div class="price--container">
+                <p class="decor--price">230 byn</p>
+                <span class="decor--price--text">сутки</span>
+                <ul class="price--about">
+                    <li class="price--element">
+                        <p class="price--text">~ $ / € по курсу НБРБ</p>
+                        <p class="price--text">* стоимость указана за 2 человек</p>
+                        <p class="price--text yellow">** стоимость дополнительного места 40 бел.руб.</p>
+                    </li>
+                </ul>
+                </div>
+                <div class="card--about--container">
+                <h2 class="card--title">Апартаменты Студио №1</h2>
+                <div class="card--info">
+                    <div>
+                        <p class="info--description">К-во комнат</p><span class="info-text">2</span>
                     </div>
+                    <div>
+                        <p class="info--description">Общая площадь</p><span class="info-text">40 м²</span>
+                    </div>
+                    <div>
+                        <p class="info--description">Спальные места</p><span class="info-text">5</span>
+                    </div>
+                    <div>
+                        <p class="info--description">В ванной</p><span class="info-text">Душевая кабина, Фен, Полотенца</span>
+                    </div>
+                    <div>
+                        <p class="info--description">На кухне</p><span class="info-text">Холодильник, СВЧ-печь, Посуда</span>
+                    </div>
+                    <div>
+                        <p class="info--description">Окна выходят</p><span class="info-text">На улицу / двор</span>
+                    </div>
+                    <div>
+                        <p class="info--description">Условия</p><span class="info-text">Возможно проживание с питомцами(доп. плата)</span>
+                    </div>
+                    <div>
+                        <p class="info--description">Этаж</p><span class="info-text">2</span>
+                    </div>
+                </div>
+                <button class="more--info">Подробнее</button>
+                <div class="price-hide">
+                    <p class="price-hide--text">Апартаменты-студио с отдельным входом с улицы. В зоне спальни наших гостей ждет одна большая двуспальная кровать (или две односпальные кровати), качественное белое постельное белье. Санузел оснащен душевой кабиной с диспенсерами для шампуня и геля для душа, дозатором с мылом для рук, полотенцами, феном, тапочками. В зоне гостиной расположен раскладной диван (в разложенном виде 140*190см). В апартаментах имеется мини-кухня с необходимым набором посуды и приборов. Нашим гостям бесплатно предоставляется чай,кофе,бутилированная вода. В апартаментах бесплатный интернет. При необходимости, гостям бесплатно предоставляются утюг и гладильная доска.</p>
+                </div>
+                <div class="card--buttons">
+                    <button class="card--button light">Позвонить</button>
+                    <a class="card--button dark" href="mailto:ugrushi-hotel.gmail.com">Написать на email</a>
+                </div>
+                </div>
+                </div>
+                    <div class="room-gallery">
+                        <div class="room-gallery-main">
+                            <button class="room-nav-btn prev">‹</button>
+                            <div class="room-gallery-images">
+                                <img src="images/hotel1_1.jpg" alt="Апартаменты Студио №1 - фото 1" class="room-main-image active">
+                                <img src="images/hotel1_2.jpg" alt="Апартаменты Студио №1 - фото 2" class="room-main-image">
+                                <img src="images/hotel1_3.jpg" alt="Апартаменты Студио №1 - фото 3" class="room-main-image">
+                                <img src="images/hotel1_4.jpg" alt="Апартаменты Студио №1 - фото 4" class="room-main-image">
+                                <img src="images/hotel1_5.jpg" alt="Апартаменты Студио №1 - фото 5" class="room-main-image">
+                                <img src="images/hotel1_6.jpg" alt="Апартаменты Студио №1 - фото 6" class="room-main-image">
+                                <img src="images/hotel1_7.jpg" alt="Апартаменты Студио №1 - фото 7" class="room-main-image">
+                            </div>
+                            <button class="room-nav-btn next">›</button>
+                        </div>
+                    </div>
+                </div>
                 </li>
                 <li class="prices--card">
                     <div class="card--about">
-                        <img src="images/price-img2.jpg" alt="Изображение Апартаментов" width="750" height="500">
+                    <div class="room-gallery">
+                        <div class="room-gallery-main">
+                            <button class="room-nav-btn prev">‹</button>
+                            <div class="room-gallery-images">
+                                <img src="images/hotel2_1.jpg" alt="Апартаменты Студио №2 - фото 1" class="room-main-image active">
+                                <img src="images/hotel2_2.jpg" alt="Апартаменты Студио №2 - фото 2" class="room-main-image">
+                                <img src="images/hotel2_3.jpg" alt="Апартаменты Студио №2 - фото 3" class="room-main-image">
+                                <img src="images/hotel2_4.jpg" alt="Апартаменты Студио №2 - фото 4" class="room-main-image">
+                                <img src="images/hotel2_5.jpg" alt="Апартаменты Студио №2 - фото 5" class="room-main-image">
+                                <img src="images/hotel2_6.jpg" alt="Апартаменты Студио №2 - фото 6" class="room-main-image">
+                                <img src="images/hotel2_7.jpg" alt="Апартаменты Студио №2 - фото 7" class="room-main-image">
+                                <img src="images/hotel2_8.jpg" alt="Апартаменты Студио №2 - фото 8" class="room-main-image">
+                            </div>
+                            <button class="room-nav-btn next">›</button>
+                        </div>
+                    </div>
                         <div class="prices--wrapper">
                             <div class="price--container">
                                 <p class="decor--price">240 byn</p>
@@ -538,12 +557,36 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="images/price-img3.jpg" alt="Изображение Апартаментов" width="750" height="500">
+                    <div class="room-gallery">
+                        <div class="room-gallery-main">
+                            <button class="room-nav-btn prev">‹</button>
+                            <div class="room-gallery-images">
+                                <img src="images/hotel3_1.jpg" alt="Апартаменты Студио №3 - фото 1" class="room-main-image active">
+                                <img src="images/hotel3_2.jpg" alt="Апартаменты Студио №3 - фото 2" class="room-main-image">
+                                <img src="images/hotel3_3.jpg" alt="Апартаменты Студио №3 - фото 3" class="room-main-image">
+                                <img src="images/hotel3_4.jpg" alt="Апартаменты Студио №3 - фото 4" class="room-main-image">
+                                <img src="images/hotel3_5.jpg" alt="Апартаменты Студио №3 - фото 5" class="room-main-image">
+                                <img src="images/hotel3_6.jpg" alt="Апартаменты Студио №3 - фото 6" class="room-main-image">
+                            </div>
+                            <button class="room-nav-btn next">›</button>
+                        </div>
+                    </div>
                     </div>
                 </li>
                 <li class="prices--card">
                     <div class="card--about">
-                        <img src="images/price-img4.jpg" alt="Изображение Апартаментов" width="750" height="500">
+                    <div class="room-gallery">
+                        <div class="room-gallery-main">
+                            <button class="room-nav-btn prev">‹</button>
+                            <div class="room-gallery-images">
+                                <img src="images/hotel4_1.jpg" alt="Апартаменты Студио №4 - фото 1" class="room-main-image active">
+                                <img src="images/hotel4_2.jpg" alt="Апартаменты Студио №4 - фото 2" class="room-main-image">
+                                <img src="images/hotel4_3.jpg" alt="Апартаменты Студио №4 - фото 3" class="room-main-image">
+                                <img src="images/hotel4_4.jpg" alt="Апартаменты Студио №4 - фото 4" class="room-main-image">
+                            </div>
+                            <button class="room-nav-btn next">›</button>
+                        </div>
+                    </div>
                         <div class="prices--wrapper">
                             <div class="price--container">
                                 <p class="decor--price">200 byn</p>
@@ -675,12 +718,36 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="images/price-img5.jpg" alt="Изображение Апартаментов" width="750" height="500">
+                    <div class="room-gallery">
+                        <div class="room-gallery-main">
+                            <button class="room-nav-btn prev">‹</button>
+                            <div class="room-gallery-images">
+                                <img src="images/hotel5_1.jpg" alt="Апартаменты Студио №5 - фото 1" class="room-main-image active">
+                                <img src="images/hotel5_2.jpg" alt="Апартаменты Студио №5 - фото 2" class="room-main-image">
+                                <img src="images/hotel5_3.jpg" alt="Апартаменты Студио №5 - фото 3" class="room-main-image">
+                                <img src="images/hotel5_4.jpg" alt="Апартаменты Студио №5 - фото 4" class="room-main-image">
+                            </div>
+                            <button class="room-nav-btn next">›</button>
+                        </div>
+                    </div>
                     </div>
                 </li>
                 <li class="prices--card">
                     <div class="card--about">
-                        <img src="images/price-img6.jpg" alt="Изображение Апартаментов" width="750" height="500">
+                    <div class="room-gallery">
+                        <div class="room-gallery-main">
+                            <button class="room-nav-btn prev">‹</button>
+                            <div class="room-gallery-images">
+                                <img src="images/hotel6_1.jpg" alt="Апартаменты Студио №6 - фото 1" class="room-main-image active">
+                                <img src="images/hotel6_2.jpg" alt="Апартаменты Студио №6 - фото 2" class="room-main-image">
+                                <img src="images/hotel6_3.jpg" alt="Апартаменты Студио №6 - фото 3" class="room-main-image">
+                                <img src="images/hotel6_4.jpg" alt="Апартаменты Студио №6 - фото 4" class="room-main-image">
+                                <img src="images/hotel6_5.jpg" alt="Апартаменты Студио №6 - фото 5" class="room-main-image">
+                                <img src="images/hotel6_6.jpg" alt="Апартаменты Студио №6 - фото 6" class="room-main-image">
+                            </div>
+                            <button class="room-nav-btn next">›</button>
+                        </div>
+                    </div>
                         <div class="prices--wrapper">
                             <div class="price--container">
                                 <p class="decor--price">230 byn</p>
@@ -749,6 +816,13 @@
                 </li>
             </ul>
         </section>
+            <div id="room-modal" class="room-modal">
+            <span class="room-modal-close">&times;</span>
+            <span class="room-modal-prev">&#10094;</span>
+            <span class="room-modal-next">&#10095;</span>
+            <img class="room-modal-content" id="room-modal-image" alt="">
+            <div class="room-modal-caption"></div>
+            </div>
         <section class="payment">
             <div class="payment--wrapper">
                 <h1 class="payment--title">Способы оплаты</h1>
