@@ -53,21 +53,31 @@ html {
     gap: 28px;
 }
 
+.nav--list--footer {
+    display: flex;
+    gap: 28px;
+}
 
-.nav--link.btn {
+.nav--link--footer.btn {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
-.nav--link {
+.nav--link.btn, .btn-rules, .btn-public {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav--link, .nav--link--footer {
     color: #C9C9CB;
     text-decoration: none;
     transition: 0.3s;
     font-size: 13px;
 }
 
-.nav--link:hover {
+.nav--link:hover, .nav--link--footer:hover {
     text-decoration: underline;
     color: #D6B782;
 }
@@ -1185,7 +1195,7 @@ html {
     transform: rotate(-45deg);
 }
 
-.modal-fire {
+.modal-fire, .modal-public {
     display: none;
     position: fixed;
     overflow: scroll;
@@ -1198,6 +1208,36 @@ html {
     background-color: #181818;
     z-index: 11;
     color: #fff;
+}
+
+.modal-rules {
+    display: none;
+    position: fixed;
+    overflow: scroll;
+    padding: 80px 60px;
+    height: 80%;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 100px;
+    background-color: #181818;
+    z-index: 11;
+    color: #fff;
+}
+
+.rules-title, .public-title {
+    font-size: 40px;
+    text-align: center;
+    color: #D6B782;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.rules-text, .public-text {
+    font-size: 18px;
+    line-height: 24px;
+    color: #d5d5d5;
+    font-weight: 300;
 }
 
 .fire-title {
@@ -1275,7 +1315,7 @@ html {
     color: #D6B782;
 }
 
-.fire-button {
+.fire-button, .close-rules, .public-close {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1289,11 +1329,11 @@ html {
     cursor: pointer;
 }
 
-.fire-button:hover {
+.fire-button:hover, .close-rules:hover, .public-close:hover {
     background-color: #565656;
 }
 
-.fire-button::before {
+.fire-button::before, .close-rules::before, .public-close::before {
     position: absolute;
     content: "";
     width: 20px;
@@ -1302,7 +1342,7 @@ html {
     transform: rotate(45deg);
 }
 
-.fire-button::after {
+.fire-button::after, .close-rules::after, .public-close::after {
     position: absolute;
     content: "";
     width: 20px;
@@ -2112,11 +2152,15 @@ html {
         padding-right: 20px;
     }
 
+    .nav--list--footer {
+        flex-wrap: wrap;
+    }
+
     .card--buttons, .location--buttons {
         flex-wrap: wrap;
     }
 
-    .location--map iframe {
+    .location--map, .location--map iframe {
         height: 300px;
     }
 

@@ -17,11 +17,18 @@ const socialsBtn = document.querySelector(".main--container--button");
 const socialsBtn2 = document.querySelector(".location--button.light");
 const socialsBtns = document.querySelectorAll(".card--button.light");
 const fireBtn = document.querySelector(".nav--link.btn");
+const fireBtnFooter = document.querySelector(".nav--link--footer.btn");
+const rulesBtn = document.querySelector(".nav--link--footer.btn-rules");
+const publicBtn = document.querySelector(".nav--link--footer.btn-public");
 const modalBg = document.querySelector(".modal-show");
 const modalFire = document.querySelector(".modal-fire");
+const modalRules = document.querySelector(".modal-rules");
+const modalPublic = document.querySelector(".modal-public");
 const modalSocils = document.querySelector(".modal-socials");
 const closeBtn = document.querySelector(".modal-socials--close");
 const closeFireBtn = document.querySelector(".fire-button");
+const closeRulesBtn = document.querySelector(".close-rules");
+const closePublicBtn = document.querySelector(".public-close");
 
 // Функции открытия
 const openSocialsModal = () => {
@@ -37,6 +44,24 @@ const openFireModal = () => {
     if (modalBg && modalFire) {
         modalBg.style.display = "block";
         modalFire.style.display = "block";
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', handleEscape);
+    }
+};
+
+const openRulesModal = () => {
+    if (modalBg && modalRules) {
+        modalBg.style.display = "block";
+        modalRules.style.display = "block";
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', handleEscape);
+    }
+};
+
+const openPublicModal = () => {
+    if (modalBg && modalPublic) {
+        modalBg.style.display = "block";
+        modalPublic.style.display = "block";
         document.body.style.overflow = 'hidden';
         document.addEventListener('keydown', handleEscape);
     }
@@ -61,11 +86,31 @@ const closeFireModal = () => {
     }
 };
 
+const closeRulesModal = () => {
+    if (modalBg && modalRules) {
+        modalBg.style.display = "none";
+        modalRules.style.display = "none";
+        document.body.style.overflow = 'auto';
+        document.removeEventListener('keydown', handleEscape);
+    }
+};
+
+const closePublicModal = () => {
+    if (modalBg && modalPublic) {
+        modalBg.style.display = "none";
+        modalPublic.style.display = "none";
+        document.body.style.overflow = 'auto';
+        document.removeEventListener('keydown', handleEscape);
+    }
+};
+
 // Функция для закрытия по клавише ESC
 const handleEscape = (event) => {
     if (event.key === 'Escape') {
         closeSocialsModal();
         closeFireModal();
+        closeRulesModal();
+        closePublicModal();
     }
 };
 
@@ -74,6 +119,8 @@ const handleOutsideClick = (event) => {
     if (event.target === modalBg) {
         closeSocialsModal();
         closeFireModal();
+        closeRulesModal();
+        closePublicModal();
     }
 };
 
@@ -84,6 +131,18 @@ if (socialsBtn) {
 
 if (fireBtn) {
     fireBtn.addEventListener("click", openFireModal);
+}
+
+if (rulesBtn) {
+    rulesBtn.addEventListener("click", openRulesModal);
+}
+
+if (publicBtn) {
+    publicBtn.addEventListener("click", openPublicModal);
+}
+
+if (fireBtnFooter) {
+    fireBtnFooter.addEventListener("click", openFireModal);
 }
 
 if (socialsBtn2) {
@@ -102,6 +161,14 @@ if (closeBtn) {
 
 if (closeFireBtn) {
     closeFireBtn.addEventListener("click", closeFireModal);
+}
+
+if (closeRulesBtn) {
+    closeRulesBtn.addEventListener("click", closeRulesModal);
+}
+
+if (closePublicBtn) {
+    closePublicBtn.addEventListener("click", closePublicModal);
 }
 
 // Закрытие по клику на фон
