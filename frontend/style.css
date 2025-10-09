@@ -2251,13 +2251,13 @@ html {
         display: none;
     }
 
-    .modal-fire {
+    .modal-fire, .modal-public, .modal-rules {
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 40px;
     }
 
-    .fire-title {
+    .fire-title, .rules-title, .public-title {
         margin-top: 10px;
         font-size: 32px;
     }
