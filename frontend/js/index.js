@@ -530,3 +530,186 @@ document.addEventListener('DOMContentLoaded', function() {
         initRoomGalleries();
     }
 });
+
+// Меню кафе
+function initMenuGallery() {
+    const menuMainImage = document.querySelector('.menu-main-image');
+    const menuMainWrapper = document.querySelector('.menu--main-image-wrapper');
+    const menuThumbnails = document.querySelectorAll('.menu-thumbnail');
+    const menuPrevBtn = document.querySelector('.menu-prev-btn');
+    const menuNextBtn = document.querySelector('.menu-next-btn');
+    const menuModal = document.getElementById('menu-modal');
+    const menuModalImg = document.getElementById('menu-modal-image');
+    const menuModalClose = document.querySelector('.menu-modal-close');
+    const menuModalPrev = document.querySelector('.menu-modal-prev');
+    const menuModalNext = document.querySelector('.menu-modal-next');
+    const menuCounter = document.querySelector('.menu--counter');
+    
+    if (!menuMainImage || menuThumbnails.length === 0) return;
+    
+    let currentIndex = 0;
+    const menuImages = [
+        'images/menu/cafe-menu-01.jpg',
+        'images/menu/cafe-menu-02.jpg',
+        'images/menu/cafe-menu-03.jpg',
+        'images/menu/cafe-menu-04.jpg',
+        'images/menu/cafe-menu-05.jpg',
+        'images/menu/cafe-menu-06.jpg',
+        'images/menu/cafe-menu-07.jpg',
+        'images/menu/cafe-menu-08.jpg',
+        'images/menu/cafe-menu-09.jpg',
+        'images/menu/cafe-menu-10.jpg'
+    ];
+    
+    function updateMainImage(index) {
+        if (index >= 0 && index < menuImages.length) {
+            currentIndex = index;
+            menuMainImage.src = menuImages[index];
+            
+            // Обновляем счетчик
+            if (menuCounter) {
+                menuCounter.textContent = `${index + 1}/${menuImages.length}`;
+            }
+            
+            // Обновляем активную миниатюру
+            menuThumbnails.forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+            
+            // Обновляем состояние кнопок
+            if (menuPrevBtn) {
+                menuPrevBtn.disabled = index === 0;
+            }
+            if (menuNextBtn) {
+                menuNextBtn.disabled = index === menuImages.length - 1;
+            }
+        }
+    }
+    
+    // Клик на миниатюру
+    menuThumbnails.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            updateMainImage(index);
+        });
+    });
+    
+    // Кнопка влево
+    if (menuPrevBtn) {
+        menuPrevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                updateMainImage(currentIndex - 1);
+            }
+        });
+    }
+    
+    // Кнопка вправо
+    if (menuNextBtn) {
+        menuNextBtn.addEventListener('click', () => {
+            if (currentIndex < menuImages.length - 1) {
+                updateMainImage(currentIndex + 1);
+            }
+        });
+    }
+    
+    // Функция обновления изображения в модальном окне
+    function updateModalImage(index) {
+        if (index >= 0 && index < menuImages.length && menuModalImg) {
+            menuModalImg.src = menuImages[index];
+            updateModalButtons(index);
+        }
+    }
+    
+    // Функция обновления состояния кнопок в модальном окне
+    function updateModalButtons(index) {
+        if (menuModalPrev) {
+            menuModalPrev.disabled = index === 0;
+        }
+        if (menuModalNext) {
+            menuModalNext.disabled = index === menuImages.length - 1;
+        }
+    }
+    
+    // Открытие модального окна при клике на главную картинку
+    if (menuMainWrapper && menuModal && menuModalImg) {
+        menuMainWrapper.addEventListener('click', () => {
+            menuModal.style.display = 'block';
+            updateModalImage(currentIndex);
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Навигация в модальном окне
+    if (menuModalPrev) {
+        menuModalPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateModalImage(currentIndex);
+                updateMainImage(currentIndex);
+            }
+        });
+    }
+    
+    if (menuModalNext) {
+        menuModalNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (currentIndex < menuImages.length - 1) {
+                currentIndex++;
+                updateModalImage(currentIndex);
+                updateMainImage(currentIndex);
+            }
+        });
+    }
+    
+    // Закрытие модального окна
+    function closeMenuModal() {
+        if (menuModal) {
+            menuModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    }
+    
+    if (menuModalClose) {
+        menuModalClose.addEventListener('click', closeMenuModal);
+    }
+    
+    if (menuModal) {
+        menuModal.addEventListener('click', (e) => {
+            if (e.target === menuModal) {
+                closeMenuModal();
+            }
+        });
+    }
+    
+    // Закрытие по ESC и навигация стрелками
+    document.addEventListener('keydown', (e) => {
+        if (menuModal && menuModal.style.display === 'block') {
+            if (e.key === 'Escape') {
+                closeMenuModal();
+            } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                currentIndex--;
+                updateModalImage(currentIndex);
+                updateMainImage(currentIndex);
+            } else if (e.key === 'ArrowRight' && currentIndex < menuImages.length - 1) {
+                currentIndex++;
+                updateModalImage(currentIndex);
+                updateMainImage(currentIndex);
+            }
+        }
+    });
+    
+    // Инициализация
+    updateMainImage(0);
+}
+
+// Инициализация меню
+document.addEventListener('DOMContentLoaded', function() {
+    const menuSection = document.querySelector('.menu');
+    if (menuSection) {
+        initMenuGallery();
+    }
+});
